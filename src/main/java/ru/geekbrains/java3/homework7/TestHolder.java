@@ -8,36 +8,36 @@ public class TestHolder {
     }
 
     @Test(priority = 4)
-    public void test1() {
-        System.out.println("Test 1");
+    public static void test1() {
+        System.out.println(4);
     }
 
     @Test(priority = 7)
-    public void test2() {
-        System.out.println("Test 2");
+    public static void test2() {
+        System.out.println(7);
     }
 
     @Test()
-    public void test3() {
-        System.out.println("Test 3");
+    public static void test3() {
+        System.out.println(5);
     }
 
     @Test(priority = 10)
-    public void test4() {
-        System.out.println("Test 4");
+    public static void test4() {
+        System.out.println(10);
     }
 
     @Test(priority = 2)
-    public void test5() {
-        System.out.println("Test 5");
+    public static void test5() {
+        System.out.println(2);
     }
 
-    public void test6() {
-        System.out.println("Test 6");
+    public static void test6() {
+        System.out.println("-");
     }
 
     @AfterSuite
-    public void afterSuite() {
+    public static void afterSuite() {
         System.out.println("afterSuite");
     }
 }
