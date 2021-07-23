@@ -6,7 +6,6 @@ import java.util.List;
 public class Box<T extends Fruit> {
 
     List<T> box = new ArrayList();
-    float totalWeight;
 
     public void addFruit(T fruit) {
         box.add(fruit);
