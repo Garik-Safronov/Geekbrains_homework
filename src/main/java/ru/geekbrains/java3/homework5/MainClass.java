@@ -6,6 +6,14 @@ import java.util.concurrent.Semaphore;
 
 public class MainClass {
 
+    public static CountDownLatch getCdlStart() {
+        return cdlStart;
+    }
+
+    public static CountDownLatch getCdlFinish() {
+        return cdlFinish;
+    }
+
     public static final int CARS_COUNT = 4;
     public static Semaphore semaphore = new Semaphore(CARS_COUNT/2);
     public static CountDownLatch cdlStart = new CountDownLatch(CARS_COUNT);

@@ -16,7 +16,7 @@ public class Car implements Runnable {
     private String name;
 
     private static final Lock lock = new ReentrantLock();
-    private static boolean checkWIN = false;
+    private static volatile boolean checkWIN = false;
 
     public String getName() {
         return name;
@@ -39,7 +39,7 @@ public class Car implements Runnable {
             System.out.println(this.name + " готовится");
             Thread.sleep(500 + (int) (Math.random() * 800));
             System.out.println(this.name + " готов");
-            MainClass.cdlStart.countDown();
+            MainClass.getCdlStart().countDown();
             MainClass.cyclicBarrier.await();
 
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class Car implements Runnable {
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }
-        MainClass.cdlFinish.countDown();
+        MainClass.getCdlFinish().countDown();
         checkWIN();
     }
 
